@@ -1,0 +1,20 @@
+---
+interface Props {
+	label: string;
+	aspect?: "video" | "vertical";
+	rounded?: boolean;
+}
+
+const { label, aspect = "video", rounded = true } = Astro.props;
+const aspectClass = aspect === "vertical" ? "aspect-[4/5]" : "aspect-video";
+const roundedClass = rounded ? "rounded-xl" : "";
+---
+
+<div
+	role="img"
+	aria-label={`Image placeholder: ${label}`}
+	class={`flex w-full flex-col items-center justify-center gap-1 bg-neutral-200 p-6 text-center text-neutral-600 ${aspectClass} ${roundedClass}`}
+>
+	<span aria-hidden="true" class="text-xs font-bold tracking-widest uppercase">Image placeholder</span>
+	<span aria-hidden="true" class="text-sm font-medium md:text-base">{label}</span>
+</div>

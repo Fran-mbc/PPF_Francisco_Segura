@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+	lang?: string;
+}
+
+const {
+	title = "Restaurante — Landing page",
+	description = "Landing page responsive de un restaurante desarrollada con Astro y Tailwind CSS 4 como ejercicio educativo.",
+	lang = Astro.currentLocale ?? "es",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,49 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const esUrl = getRelativeLocaleUrl("es");
+const enUrl = getRelativeLocaleUrl("en");
+---
+
+<nav aria-label={t("langPicker.label")}>
+	<ul class="flex items-center gap-1 text-xs font-semibold">
+		<li>
+			<a
+				href={esUrl}
+				aria-current={lang === "es" ? "page" : undefined}
+				aria-label={`${t("langPicker.help")}: Español`}
+				class:list={[
+					"rounded-full px-2 py-1",
+					lang === "es"
+						? "bg-neutral-900 text-white"
+						: "text-neutral-500 hover:text-neutral-900",
+				]}
+			>
+				ES
+			</a>
+		</li>
+		<li aria-hidden="true" class="text-neutral-300">/</li>
+		<li>
+			<a
+				href={enUrl}
+				aria-current={lang === "en" ? "page" : undefined}
+				aria-label={`${t("langPicker.help")}: English`}
+				class:list={[
+					"rounded-full px-2 py-1",
+					lang === "en"
+						? "bg-neutral-900 text-white"
+						: "text-neutral-500 hover:text-neutral-900",
+				]}
+			>
+				EN
+			</a>
+		</li>
+	</ul>
+</nav>

@@ -1,0 +1,26 @@
+---
+import Placeholder from "./ui/Placeholder.astro";
+
+const posts = [
+	{ title: "Getting Started", description: "Get your site up and running" },
+	{ title: "Styling Your Theme", description: "Styling Your Theme" },
+	{ title: "Premium Features (on request)", description: "Need more, don't want attribution?" },
+];
+---
+
+<section id="noticias" aria-labelledby="docs-title">
+	<div class="mx-auto max-w-6xl px-4 py-12">
+		<h2 id="docs-title">Docs &amp; Features</h2>
+		<ul class="grid gap-8 md:grid-cols-3">
+			{posts.map((post) => (
+				<li>
+					<article>
+						<Placeholder label={post.title} aspect="vertical" />
+						<h3>{post.title}</h3>
+						<p>{post.description}</p>
+					</article>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

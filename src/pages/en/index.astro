@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import FlexibleMenu from "../../components/FlexibleMenu.astro";
+import VisualEditing from "../../components/VisualEditing.astro";
+import LightningFast from "../../components/LightningFast.astro";
+import DocsFeatures from "../../components/DocsFeatures.astro";
+import OpenSource from "../../components/OpenSource.astro";
+import TastyDeals from "../../components/TastyDeals.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+	lang="en"
+	title="Restaurant — Landing page"
+	description="Responsive restaurant landing page built with Astro and Tailwind CSS 4 as an educational exercise."
+>
+	<Header lang="en" />
+	<main>
+		<Hero lang="en" />
+		<FlexibleMenu />
+		<VisualEditing />
+		<LightningFast />
+		<DocsFeatures />
+		<OpenSource />
+		<TastyDeals />
+	</main>
+	<Footer />
+</Layout>

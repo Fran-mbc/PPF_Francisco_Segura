@@ -1,0 +1,54 @@
+---
+import Placeholder from "./ui/Placeholder.astro";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="inicio" aria-labelledby="hero-title" class="bg-white">
+	<div class="mx-auto max-w-4xl px-4 pt-16 pb-8 text-center md:pt-24">
+		<p class="text-xs font-bold tracking-widest text-neutral-500 uppercase">
+			{t("hero.eyebrow")}
+		</p>
+		<h1
+			id="hero-title"
+			class="mt-4 text-4xl leading-tight font-bold tracking-tight text-neutral-900 sm:text-5xl md:text-6xl"
+		>
+			{t("hero.titleStart")}
+			<strong class="italic">{t("hero.titleAccent")}</strong>
+			{t("hero.titleEnd")}
+		</h1>
+		<p class="mx-auto mt-6 max-w-2xl text-base text-neutral-600 md:text-lg">
+			{t("hero.description")}
+		</p>
+		<ul class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+			<li>
+				<a
+					href="#nosotros"
+					class="inline-block rounded-full bg-neutral-900 px-8 py-3 text-sm font-semibold text-white hover:bg-neutral-700"
+				>
+					{t("hero.ctaPrimary")}
+				</a>
+			</li>
+			<li>
+				<a
+					href="#carta"
+					class="inline-block rounded-full border border-neutral-300 px-8 py-3 text-sm font-semibold text-neutral-900 hover:border-neutral-900"
+				>
+					{t("hero.ctaSecondary")}
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="mx-auto max-w-6xl px-4 pb-16 md:pb-24">
+		<figure>
+			<Placeholder label={t("hero.title")} aspect="video" />
+			<figcaption class="sr-only">{t("hero.imageCaption")}</figcaption>
+		</figure>
+	</div>
+</section>
