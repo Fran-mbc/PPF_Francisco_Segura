@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { useTranslations, type Lang } from "../i18n/utils";
 
 interface Props {
 	title?: string;
@@ -12,6 +13,7 @@ const {
 	description = "Landing page responsive de un restaurante desarrollada con Astro y Tailwind CSS 4 como ejercicio educativo.",
 	lang = Astro.currentLocale ?? "es",
 } = Astro.props;
+const t = useTranslations((lang === "en" ? "en" : "es") as Lang);
 ---
 
 <!doctype html>
@@ -25,7 +27,13 @@ const {
 		<title>{title}</title>
 		<meta name="description" content={description} />
 	</head>
-	<body>
+	<body class="overflow-x-clip bg-white text-neutral-900 antialiased">
+		<a
+			href="#contenido"
+			class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:rounded-full focus:bg-neutral-900 focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white"
+		>
+			{t("skip")}
+		</a>
 		<slot />
 	</body>
 </html>

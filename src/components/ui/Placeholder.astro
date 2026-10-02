@@ -13,8 +13,8 @@ const roundedClass = rounded ? "rounded-xl" : "";
 <div
 	role="img"
 	aria-label={`Image placeholder: ${label}`}
-	class={`flex w-full flex-col items-center justify-center gap-1 bg-neutral-200 p-6 text-center text-neutral-600 ${aspectClass} ${roundedClass}`}
+	class={`flex min-h-[7.5rem] w-full min-w-0 flex-col items-center justify-center gap-1 overflow-hidden bg-neutral-200 p-4 text-center break-words text-neutral-700 sm:p-6 ${aspectClass} ${roundedClass}`}
 >
 	<span aria-hidden="true" class="text-xs font-bold tracking-widest uppercase">Image placeholder</span>
-	<span aria-hidden="true" class="text-sm font-medium md:text-base">{label}</span>
+	<span aria-hidden="true" class="max-w-full text-sm font-medium break-words md:text-base">{label}</span>
 </div>

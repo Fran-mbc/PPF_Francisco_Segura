@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	overflow-x: clip;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+}
+
+main {
+	display: block;
+}
+
+section[id],
+footer[id] {
+	scroll-margin-top: 6.5rem;
+}
+
+img,
+video,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+		transform: none !important;
+	}
+}

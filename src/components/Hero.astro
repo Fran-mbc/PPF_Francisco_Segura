@@ -11,42 +11,42 @@ const t = useTranslations(lang);
 ---
 
 <section id="inicio" aria-labelledby="hero-title" class="bg-white">
-	<div class="mx-auto max-w-4xl px-4 pt-16 pb-8 text-center md:pt-24">
-		<p class="text-xs font-bold tracking-widest text-neutral-500 uppercase">
+	<div class="mx-auto max-w-4xl min-w-0 px-4 pt-12 pb-8 text-center sm:px-6 sm:pt-16 md:pt-24 lg:px-8">
+		<p class="text-xs font-bold tracking-widest text-neutral-600 uppercase">
 			{t("hero.eyebrow")}
 		</p>
 		<h1
 			id="hero-title"
-			class="mt-4 text-4xl leading-tight font-bold tracking-tight text-neutral-900 sm:text-5xl md:text-6xl"
+			class="mt-4 text-3xl leading-[1.15] font-bold tracking-tight text-balance break-words text-neutral-900 sm:text-5xl md:text-6xl"
 		>
 			{t("hero.titleStart")}
 			<strong class="italic">{t("hero.titleAccent")}</strong>
 			{t("hero.titleEnd")}
 		</h1>
-		<p class="mx-auto mt-6 max-w-2xl text-base text-neutral-600 md:text-lg">
+		<p class="mx-auto mt-6 max-w-2xl min-w-0 text-base break-words text-neutral-600 md:text-lg">
 			{t("hero.description")}
 		</p>
-		<ul class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-			<li>
+		<ul class="mt-8 flex min-w-0 flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+			<li class="min-w-0">
 				<a
 					href="#nosotros"
-					class="inline-block rounded-full bg-neutral-900 px-8 py-3 text-sm font-semibold text-white hover:bg-neutral-700"
+					class="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-neutral-900 px-8 py-3 text-sm font-semibold text-white hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 sm:w-auto"
 				>
 					{t("hero.ctaPrimary")}
 				</a>
 			</li>
-			<li>
+			<li class="min-w-0">
 				<a
 					href="#carta"
-					class="inline-block rounded-full border border-neutral-300 px-8 py-3 text-sm font-semibold text-neutral-900 hover:border-neutral-900"
+					class="inline-flex min-h-[44px] w-full items-center justify-center rounded-full border border-neutral-300 px-8 py-3 text-sm font-semibold text-neutral-900 hover:border-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 sm:w-auto"
 				>
 					{t("hero.ctaSecondary")}
 				</a>
 			</li>
 		</ul>
 	</div>
-	<div class="mx-auto max-w-6xl px-4 pb-16 md:pb-24">
-		<figure>
+	<div class="mx-auto max-w-6xl min-w-0 px-4 pb-12 sm:px-6 md:pb-24 lg:px-8">
+		<figure class="min-w-0">
 			<Placeholder label={t("hero.title")} aspect="video" />
 			<figcaption class="sr-only">{t("hero.imageCaption")}</figcaption>
 		</figure>

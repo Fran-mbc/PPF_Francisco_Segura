@@ -1,22 +1,51 @@
 ---
 import Placeholder from "./ui/Placeholder.astro";
+import { useTranslations, type Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const benefits = [0, 1, 2].map((i) => t(`openSource.benefits.${i}`));
 ---
 
-<section aria-labelledby="open-source-title">
-	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-2 md:items-center">
-		<figure>
-			<Placeholder label="Chef Portrait" aspect="video" />
-			<figcaption>Chef del restaurante</figcaption>
-		</figure>
-		<div>
-			<h2 id="open-source-title">Free and Open Source</h2>
-			<p>Enjoy the benefits of our theme under the CC BY 4.0 License.</p>
-			<ul class="list-disc pl-6">
-				<li>Free to use for personal and commercial projects.</li>
-				<li>Customizable to meet your unique needs.</li>
-				<li>Community support and regular updates.</li>
-			</ul>
-			<p><a href="https://github.com/">Github</a></p>
-		</div>
-	</div>
+<section aria-labelledby="open-source-title" class="bg-neutral-900 text-white">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:py-20">
+    <figure>
+      <Placeholder label={t("openSource.imageLabel")} aspect="video" />
+      <figcaption class="mt-3 text-sm text-neutral-400">
+        {t("openSource.imageCaption")}
+      </figcaption>
+    </figure>
+    <div>
+      <p class="text-xs font-bold tracking-widest text-neutral-400 uppercase">
+        {t("openSource.eyebrow")}
+      </p>
+      <h2 id="open-source-title" class="mt-2 text-3xl font-bold tracking-tight">
+        {t("openSource.title")}
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-neutral-300">
+        {t("openSource.description")}
+      </p>
+      <ul class="mt-6 space-y-3 text-sm text-neutral-200">
+        {benefits.map((benefit) => (
+          <li class="flex items-start gap-3">
+            <span aria-hidden="true" class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white" />
+            <span>{benefit}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-8">
+        <a
+          href="#visitanos"
+          class="inline-block rounded-full bg-white px-8 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
+        >
+          {t("openSource.cta")}
+        </a>
+      </p>
+    </div>
+  </div>
 </section>
